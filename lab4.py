@@ -273,14 +273,14 @@ def phuong_trinh_bac_hai():
         x1 = (-b + math.sqrt(delta)) / (2*a)
         x2 = (-b - math.sqrt(delta)) / (2*a)
         print(f"Phương trình có hai nghiệm phân biệt: x1 = {x1}, x2 = {x2}")
-        lich_su[f"{a}x^2 + {b}x + {c}"]=f"x1 = {x1}, x2 = {x2}"
+        lich_su[f"{a}x^2 + {b}x + {c}"] = f"x1 = {x1}, x2 = {x2}"
     elif delta == 0:
         x = -b / (2*a)
         print(f"Phương trình có nghiệm kép: x = {x}")
         lich_su[f"{a}x^2 + {b}x + {c}"]=f"x = {x}"
     else:
         print("Phương trình vô nghiệm.")
-        lich_su[f"{a}x^2 + {b}x + {c}"]="Vô nghiệm"
+        lich_su[f"{a}x^2 + {b}x + {c}=0"]="Vô nghiệm"
     return lich_su
 
 def phuong_trinh_bac_nhat():
@@ -313,7 +313,7 @@ def xuat_lich_su(lich_su_tong_quat):
     print("Lịch sử các phép tính:")
     for lich_su in lich_su_tong_quat:
         for phep_tinh, ket_qua in lich_su.items():
-            print(f"{phep_tinh} = {ket_qua}")
+            print(f"Phép tính :{phep_tinh}  Kết quả {ket_qua}")
         
 def thoi_gian_hien_tai():
     from datetime import datetime
