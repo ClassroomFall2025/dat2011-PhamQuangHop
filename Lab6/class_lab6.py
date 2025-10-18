@@ -176,6 +176,7 @@ class QuanLySinhVien():
             
     def sap_xep_diem(self):
         self.danh_sach_sinh_vien.sort(key=lambda sv: sv.get_diem(), reverse=True)
+        print("Đã sắp xếp!")
         
     def xuat_sv_hoc_luc_gioi(self):
         print("\nDanh sách sinh viên học lực Giỏi")
