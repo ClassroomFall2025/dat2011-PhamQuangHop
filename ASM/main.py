@@ -32,25 +32,27 @@ def menu():
                 break
             case 1:
                 nhap_ds_nv()
-                ghi_file()
+                nap_du_lieu()
             case 2:
-                xuat_ds(ds_nhanvien)   
+                nap_du_lieu()
+                xuat_ds(ds_toanbo_nhanvien)   
             case 3:
                 ds_timkiem=tim_kiem_nhan_vien()
-                if not (ds_timkiem["Hành chính"]==[] and ds_timkiem["Tiếp thị"]==[] and ds_timkiem["Trưởng phòng"]==[]):
-                    if ds_timkiem["Hành chính"] != []:
-                        xuat_ds_theo_loai("Hành chính",ds_timkiem["Hành chính"])
-                    if ds_timkiem["Tiếp thị"] != []:
-                        xuat_ds_theo_loai("Tiếp thị",ds_timkiem["Tiếp thị"])
-                    if ds_timkiem["Trưởng phòng"] != []:
-                        xuat_ds_theo_loai("Trưởng phòng",ds_timkiem["Trưởng phòng"])
+                if ds_timkiem:
+                    xuat_ds(ds_timkiem)
+                else:
+                    print("Không tìm thấy nhân viên nào!")
             case 4:
                 xoa_nv_theo_ma()
-                ghi_file()    
+                ghi_toanbo_file()  
+                nap_du_lieu()  
             case 5:
-                cap_nhat_tt_theo_ma(ds_nhanvien)  
+                cap_nhat_tt_theo_ma() 
+                ghi_toanbo_file()
+                nap_du_lieu()  
             case 6:
-                xuat_ds(sap_xep_nv())    
+                sap_xep_nv()
+                ghi_toanbo_file()  
             case 7:
                 result = xuat_5_nv_thu_nhap_cao_nhat()
                 
@@ -59,7 +61,7 @@ def menu():
                     print(f"| {'Mã NV':^10} | {'Tên NV':^20} | {'Lương':^20} |" )
                     print(i.xuat_thong_tin_co_ban())
             case 8:
-                xuat_ds_theo_phong_ban(ds_nhanvien)
+                xuat_ds_theo_phong_ban(ds_toanbo_nhanvien)
             case _:
                 print("Lựa chọn không hợp lệ.")
 
